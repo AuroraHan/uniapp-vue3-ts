@@ -2,10 +2,10 @@
   <view class="content">
     <image src="@/static/logo.png"></image>
     <view>
-      <text class="title">{{ title }} 你好啊十三点</text>
+      <text class="title">{{ title }} 你</text>
     </view>
     <view @click="goHome">点击跳转</view>
-    <Navbar :foo="childData"></Navbar>
+    <Navbar :foo="childData" @change="changeTabs"></Navbar>
   </view>
 </template>
 
@@ -20,6 +20,10 @@ const childData = ref('数据')
 
 function goHome() {
   nav.main.home.push()
+}
+
+function changeTabs(e: String) {
+  console.log(e, '---')
 }
 
 onLoad((options) => {

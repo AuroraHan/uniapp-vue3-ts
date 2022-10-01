@@ -1,7 +1,5 @@
 <template>
-  <view class="content">
-    <view> home页 </view>
-  </view>
+  <view class="content"> 个人中心 </view>
 </template>
 
 <script setup lang="ts">
