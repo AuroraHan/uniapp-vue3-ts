@@ -2,10 +2,10 @@
   <view class="content">
     <image src="@/static/logo.png"></image>
     <view>
-      <text class="title">{{ title }} 你</text>
+      <text class="title"> 你</text>
     </view>
     <view @click="goHome">点击跳转</view>
-    <Navbar :foo="childData" @change="changeTabs"></Navbar>
+    <Navbar title="首页" :bg-color="bgColor"></Navbar>
   </view>
 </template>
 
@@ -15,29 +15,26 @@ import { onShow, onHide, onLoad } from '@dcloudio/uni-app'
 import { nav } from '@/navigator/index'
 import Navbar from '@/components/Navbar/index.vue'
 
-const title = ref('')
-const childData = ref('数据')
+const bgColor = ref('red')
+// const childData = ref('数据')
 
 function goHome() {
   nav.main.home.push()
 }
 
-function changeTabs(e: String) {
-  console.log(e, '---')
-}
+// function changeTabs(e: String) {
+//   console.log(e, '---')
+// }
 
 onLoad((options) => {
   console.log('page query', options)
 })
 
 // 页面切换到前台时
-onShow(() => {
-  title.value = 'onShowhello uni-app-vue3 setup'
-})
+onShow(() => {})
 
 // 页面切换到后台时
 onHide(() => {
-  title.value = 'onHidesee you'
   console.log('onHidesee you')
 })
 </script>

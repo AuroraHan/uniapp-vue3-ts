@@ -1,12 +1,16 @@
 <template>
+  <Navbar title="Home" :bg-color="bgColor"></Navbar>
   <view class="content">
     <view> home页 </view>
   </view>
 </template>
 
 <script setup lang="ts">
-// import { ref } from 'vue'
+import { ref } from 'vue'
 // import { onShow, onHide, onLoad } from '@dcloudio/uni-app'
+import Navbar from '@/components/Navbar/index.vue'
+
+const bgColor = ref('red')
 </script>
 
 <style lang="scss">
