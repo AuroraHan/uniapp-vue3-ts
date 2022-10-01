@@ -1,6 +1,7 @@
 <template>
   <view class="content">
     <image class="logo" src="../../static/logo.png"></image>
+    <image src="@/static/logo.png"></image>
     <view>
       <text class="title">{{ title }} 你好啊十三点</text>
     </view>
