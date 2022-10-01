@@ -7,13 +7,13 @@
 			}
 		},
 		{
-			"path": "pages/home/index",
+			"path": "pages/home/main/index",
 			"style": {
 				"navigationBarTitleText": "uni-app"
 			}
 		},
 		{
-			"path": "pages/center/index",
+			"path": "pages/center/main/index",
 			"style": {
 				"navigationBarTitleText": "uni-app"
 			}
@@ -30,16 +30,16 @@
 				"pagePath": "pages/index/index",
 				"iconPath": "static/logo.png",
 				"selectedIconPath": "static/logo.png",
-				"text": "Home"
+				"text": "Index"
 			}, 
 			{
-			"pagePath": "pages/home/index",
+			"pagePath": "pages/home/main/index",
 			"iconPath": "static/logo.png",
 			"selectedIconPath": "static/logo.png",
 			"text": "Home"
 			}, 
 			{
-			"pagePath": "pages/center/index",
+			"pagePath": "pages/center/main/index",
 			"iconPath": "static/logo.png",
 			"selectedIconPath": "static/logo.png",
 			"text": "个人中心"
