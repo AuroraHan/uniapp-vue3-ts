@@ -1,11 +1,11 @@
 <template>
   <view class="content">
-    <image class="logo" src="../../static/logo.png"></image>
     <image src="@/static/logo.png"></image>
     <view>
       <text class="title">{{ title }} 你好啊十三点</text>
     </view>
     <view @click="goHome">点击跳转</view>
+    <Navbar :foo="childData"></Navbar>
   </view>
 </template>
 
@@ -13,8 +13,10 @@
 import { ref } from 'vue'
 import { onShow, onHide, onLoad } from '@dcloudio/uni-app'
 import { nav } from '@/navigator/index'
+import Navbar from '@/components/Navbar/index.vue'
 
 const title = ref('')
+const childData = ref('数据')
 
 function goHome() {
   nav.main.home.push()
