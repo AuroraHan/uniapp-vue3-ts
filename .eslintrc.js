@@ -1,6 +1,6 @@
 module.exports = {
   env: { node: true },
-  globals: { uni: true, wx: true, my: true, swan: true },
+  globals: { uni: true, wx: true, my: true, swan: true, getCurrentPages: true, AnyObject: true },
   parser: 'vue-eslint-parser',
   parserOptions: { parser: '@typescript-eslint/parser', sourceType: 'module' },
   extends: ['eslint:recommended', 'plugin:vue/vue3-recommended', 'prettier'],

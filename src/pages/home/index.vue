@@ -1,38 +1,29 @@
 <template>
   <view class="content">
-    <image class="logo" src="../../static/logo.png"></image>
     <image src="@/static/logo.png"></image>
     <view>
-      <text class="title">{{ title }} 你好啊十三点</text>
+      <text class="title">{{ title }} 你好啊</text>
     </view>
-    <view @click="goHome">点击跳转</view>
   </view>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 import { onShow, onHide, onLoad } from '@dcloudio/uni-app'
-import { nav } from '@/navigator/index'
 
 const title = ref('')
-
-function goHome() {
-  nav.main.home.push()
-}
-
 onLoad((options) => {
   console.log('page query', options)
 })
 
 // 页面切换到前台时
 onShow(() => {
-  title.value = 'onShowhello uni-app-vue3 setup'
+  title.value = 'hello uni-app-vue3 setup'
 })
 
 // 页面切换到后台时
 onHide(() => {
-  title.value = 'onHidesee you'
-  console.log('onHidesee you')
+  title.value = 'see you'
 })
 </script>
 
