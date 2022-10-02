@@ -12,6 +12,7 @@ export default defineComponent({
   },
 })
 </script>
-<style>
+<style lang="scss" scoped>
+@import 'vk-uview-ui/index.scss';
 /*每个页面公共css */
 </style>

@@ -6,6 +6,7 @@
     </view>
     <view @click="goHome">点击跳转</view>
     <Navbar title="首页" :bg-color="bgColor"></Navbar>
+    <u-button>月落</u-button>
   </view>
 </template>
 

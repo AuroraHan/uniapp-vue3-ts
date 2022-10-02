@@ -3,7 +3,7 @@
     class="content"
     :style="{ height: 44 + statusBar + 'px', paddingTop: statusBar + 'px', background: bgColor ? bgColor : '' }"
   >
-    <view class="navabr-left" v-if="showBack" @click="onClickBack">《</view>
+    <view v-if="showBack" class="navabr-left" @click="onClickBack">《</view>
     <view class="navabr-title">{{ props.title }}</view>
     <view class="navabr-right"></view>
   </view>
@@ -23,11 +23,13 @@ const props = defineProps({
   //背景颜色
   bgColor: {
     type: String,
+    default: '',
   },
 
   //标题
   title: {
     type: String,
+    default: '',
   },
 })
 
