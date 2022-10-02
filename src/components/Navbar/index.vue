@@ -23,7 +23,7 @@ const props = defineProps({
   //背景颜色
   bgColor: {
     type: String,
-    default: '',
+    default: '#f3d19e',
   },
 
   //标题

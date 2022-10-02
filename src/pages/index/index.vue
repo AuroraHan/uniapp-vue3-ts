@@ -1,31 +1,19 @@
 <template>
   <view class="content">
-    <image src="@/static/logo.png"></image>
+    <Navbar title="Index" :bg-color="bgColor"></Navbar>
     <view>
-      <text class="title"> 你</text>
+      <Button class="btn"></Button>
     </view>
-    <view @click="goHome">点击跳转</view>
-    <Navbar title="首页" :bg-color="bgColor"></Navbar>
-    <u-button>月落</u-button>
   </view>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 import { onShow, onHide, onLoad } from '@dcloudio/uni-app'
-import { nav } from '@/navigator/index'
 import Navbar from '@/components/Navbar/index.vue'
+import Button from '@/components/Button/index.vue'
 
-const bgColor = ref('red')
-// const childData = ref('数据')
-
-function goHome() {
-  nav.main.home.push()
-}
-
-// function changeTabs(e: String) {
-//   console.log(e, '---')
-// }
+const bgColor = ref('#f3d19e')
 
 onLoad((options) => {
   console.log('page query', options)
@@ -41,19 +29,7 @@ onHide(() => {
 </script>
 
 <style lang="scss">
-.content {
-  text-align: center;
-  height: $test-size;
-}
-
-.logo {
-  height: 200rpx;
-  width: 200rpx;
-  margin-top: 200rpx;
-}
-
-.title {
-  font-size: 36rpx;
-  color: #8f8f94;
+.btn {
+  padding: 0;
 }
 </style>
