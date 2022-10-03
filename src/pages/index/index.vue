@@ -2,7 +2,7 @@
   <view class="content">
     <Navbar title="Index" :bg-color="bgColor"></Navbar>
     <view>
-      <Button class="btn"></Button>
+      <Button class="btn" type="danger" @click="onClick"></Button>
     </view>
   </view>
 </template>
@@ -19,6 +19,10 @@ onLoad((options) => {
   console.log('page query', options)
 })
 
+function onClick(e: any) {
+  console.log('111', e)
+}
+
 // 页面切换到前台时
 onShow(() => {})
 
@@ -31,5 +35,6 @@ onHide(() => {
 <style lang="scss">
 .btn {
   padding: 0;
+  overflow: hidden;
 }
 </style>
