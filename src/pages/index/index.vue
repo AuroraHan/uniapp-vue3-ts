@@ -2,7 +2,7 @@
   <view class="content">
     <Navbar title="Index" :bg-color="bgColor"></Navbar>
     <view>
-      <Button class="btn" type="danger" @click="onClick"></Button>
+      <Button class="btn" type="danger"></Button>
     </view>
   </view>
 </template>
@@ -18,10 +18,6 @@ const bgColor = ref('#f3d19e')
 onLoad((options) => {
   console.log('page query', options)
 })
-
-function onClick(e: any) {
-  console.log('111', e)
-}
 
 // 页面切换到前台时
 onShow(() => {})

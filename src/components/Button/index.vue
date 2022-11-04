@@ -1,17 +1,13 @@
 <!--  -->
 <template>
-  <button
-    type="button"
-    class="btn-default"
-    :style="{ 'background-color': comBgColor, width: props.size + 'px' }"
-    @click="handleClick"
-  >
+  <button type="button" class="btn-default" :style="{ 'background-color': comBgColor, width: props.size + 'px' }">
+    <slot />
     按钮
   </button>
 </template>
 
 <script setup lang="ts">
-import { defineProps, computed, defineEmits } from 'vue'
+import { defineProps, computed } from 'vue'
 import { buttonTypes } from './index'
 
 const props = defineProps({
@@ -26,12 +22,6 @@ const props = defineProps({
   },
   disabled: Boolean,
 })
-
-const emits = defineEmits(['click'])
-
-function handleClick(evt: MouseEvent) {
-  emits('click', evt)
-}
 
 //切花按钮颜色
 const comBgColor = computed(() => {
