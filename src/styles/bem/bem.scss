@@ -1,0 +1,114 @@
+@import "./conf.scss";
+
+@function selectorToString($selector) {
+	$selector: inspect($selector);
+	$selector: str-slice($selector, 2, -2);
+	@return $selector;
+}
+
+@function containsModifier($selector) {
+	$selector: selectorToString($selector);
+	@if str-index($selector, $modifier-separator) {
+		@return true;
+	} @else {
+		@return false;
+	}
+}
+
+@function containWhenFlag($selector) {
+	$selector: selectorToString($selector);
+	@if str-index($selector, "." + $state-prefix) {
+		@return true;
+	} @else {
+		@return false;
+	}
+}
+
+@function containPseudoClass($selector) {
+	$selector: selectorToString($selector);
+	@if str-index($selector, ":") {
+		@return true;
+	} @else {
+		@return false;
+	}
+}
+
+@function hitAllSpecialNestRule($selector) {
+	@return containsModifier($selector) or containWhenFlag($selector) or containPseudoClass($selector);
+}
+
+// getCssVarName('button', 'text-color') => '--el-button-text-color'
+@function getCssVarName($args...) {
+	@return joinVarName($args);
+  }
+  
+  // getCssVar('button', 'text-color') => var(--el-button-text-color)
+  @function getCssVar($args...) {
+	@return var(#{joinVarName($args)});
+  }
+  
+  // getCssVarWithDefault(('button', 'text-color'), red) => var(--el-button-text-color, red)
+  @function getCssVarWithDefault($args, $default) {
+	@return var(#{joinVarName($args)}, #{$default});
+  }
+
+$B: null;
+$E: null;
+@mixin block($block) {
+	$B: $namespace + "-" + $block !global;
+	.#{$B} {
+		@content;
+	}
+}
+
+@mixin element($element) {
+	$E: $element !global;
+	$selector: &;
+	$currentSelector: "";
+	@each $unit in $element {
+		$currentSelector: #{$currentSelector + "." + $B + $element-separator + $unit + ","};
+	}
+	@if hitAllSpecialNestRule($selector) {
+		@at-root {
+			#{$selector} {
+				#{$currentSelector} {
+					@content;
+				}
+			}
+		}
+	} @else {
+		@at-root {
+			#{$currentSelector} {
+				@content;
+			}
+		}
+	}
+}
+@mixin modifier($modifier) {
+	$selector: &;
+	$currentSelector: "";
+	@each $unit in $modifier {
+		$currentSelector: #{$currentSelector + $selector + $modifier-separator + $unit + ","};
+	}
+	@at-root {
+		#{$currentSelector} {
+			@content;
+		}
+	}
+}
+
+@mixin state($state) {
+	@at-root {
+		&.#{$state-prefix + $state} {
+			@content;
+		}
+	}
+}
+
+@mixin when($state) {
+	@at-root {
+	  &.#{$state-prefix + $state} {
+		@content;
+	  }
+	}
+  }

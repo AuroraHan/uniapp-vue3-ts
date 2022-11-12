@@ -6,15 +6,13 @@
 </template>
 
 <script setup lang="ts">
-// import { ref } from 'vue'
-// import { onShow, onHide, onLoad } from '@dcloudio/uni-app'
 import Navbar from '@/components/Navbar/index.vue'
 </script>
 
 <style lang="scss">
 .content {
   text-align: center;
-  height: $test-size;
+  height: 400rpx;
 }
 
 .logo {

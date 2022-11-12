@@ -21,7 +21,7 @@
 		{
 			"path": "pages/center/main/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationStyle": "custom"
 			}
 		}
 	],
