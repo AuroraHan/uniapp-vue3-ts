@@ -3,7 +3,9 @@
     class="content"
     :style="{ height: 44 + statusBar + 'px', paddingTop: statusBar + 'px', background: bgColor ? bgColor : '' }"
   >
-    <view v-if="showBack" class="navabr-left" @click="onClickBack">《</view>
+    <view v-if="showBack" class="navabr-left" @click="onClickBack"
+      ><text class="iconfont green-zuojiantou1"></text
+    ></view>
     <view class="navabr-title">{{ props.title }}</view>
     <view class="navabr-right"></view>
   </view>
@@ -23,7 +25,7 @@ const props = defineProps({
   //背景颜色
   bgColor: {
     type: String,
-    default: '#f3d19e',
+    default: '#67DEA8',
   },
 
   //标题

@@ -1,6 +1,6 @@
 <template>
   <view class="content">
-    <Navbar title="Index" :bg-color="bgColor"></Navbar>
+    <Navbar title="Index"></Navbar>
     <!-- <view>
       <Button class="btn" type="danger"></Button>
     </view> -->

@@ -1,5 +1,5 @@
 <template>
-  <Navbar title="个人中心" :bg-color="bgColor"></Navbar>
+  <Navbar title="个人中心"></Navbar>
   <view :class="[ns.b()]">
     <view :class="[ns.b('user')]">
       <image :class="[ns.be('user', 'img')]" src="@/static/logo.png"></image>
@@ -23,7 +23,6 @@ import Navbar from '@/components/Navbar/index.vue'
 import { useNamespace } from '@/hooks/use-namespace'
 
 const ns = useNamespace('center')
-const bgColor = ref('#f3d19e')
 </script>
 
 <style lang="scss">
