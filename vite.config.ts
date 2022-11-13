@@ -16,6 +16,9 @@ export default defineConfig(({ command, mode }) => {
         scss: { additionalData: `@import "@/styles/index.scss";` },
       },
     },
+    optimizeDeps: {
+      include: ['@dcloudio/uni-ui'],
+    },
 
     plugins: [uni(), eslintPlugin()],
   }
@@ -28,3 +31,25 @@ export default defineConfig(({ command, mode }) => {
     return config
   }
 })
+
+// export default defineConfig({
+//   plugins: [uni(), eslintPlugin()],
+//   resolve: {
+//     alias: {
+//       '@': path.resolve(__dirname, './src'),
+//     },
+//   },
+//   // sass 配置
+//   css: {
+//     preprocessorOptions: {
+//       // 导入scss预编译程序
+//       scss: {
+//         // 配置样式的路径
+//         additionalData: `@import "@/styles/index.scss";`,
+//       },
+//     },
+//   },
+//   optimizeDeps: {
+//     include: ['@dcloudio/uni-ui'],
+//   },
+// })
