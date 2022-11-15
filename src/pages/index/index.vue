@@ -1,11 +1,10 @@
 <template>
   <view class="content">
     <Navbar title="Index"></Navbar>
-    <!-- <view>
-      <Button class="btn" type="danger"></Button>
-    </view> -->
     <uni-badge text="4" type="primary"></uni-badge>
-    <uni-search-bar placeholder="自定placeholder" style="width: 750rpx"></uni-search-bar>
+    <view>
+      <FoodCard v-for="(item, index) in 4" :key="index"></FoodCard>
+    </view>
   </view>
 </template>
 
@@ -13,10 +12,8 @@
 import { ref } from 'vue'
 import { onShow, onHide, onLoad } from '@dcloudio/uni-app'
 import Navbar from '@/components/Navbar/index.vue'
-import Button from '@/components/Button/index.vue'
 import UniBadge from '@/components/uni-badge/uni-badge.vue'
-
-const bgColor = ref('#f3d19e')
+import FoodCard from '@/components/FoodCard/index.vue'
 
 onLoad((options) => {
   console.log('page query', options)
@@ -35,5 +32,14 @@ onHide(() => {
 .btn {
   padding: 0;
   overflow: hidden;
+}
+
+.cardflow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 400px;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 </style>
